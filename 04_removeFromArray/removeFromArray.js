@@ -1,14 +1,9 @@
 const removeFromArray = function(fullArray) {
     let args = [];
+    let filteredArray = fullArray;
     for (let index = 1; index < arguments.length; index++) {
-        args[index-1] = arguments[index];
+        filteredArray = filteredArray.filter(val => val !== arguments[index]);
     }
-    filteredArray = fullArray.filter(matchArrayValue);
-
-    function matchArrayValue(checkValue) {
-        args.includes(checkValue);
-    }
-
     return filteredArray;
 };
 
